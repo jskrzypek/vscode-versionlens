@@ -8,7 +8,7 @@
   },
   "author": "Peter Flannery",
   "license": "MIT",
-  "version": "0.24.0",
+  "version": "0.25.0",
   "publisher": "pflannery",
   "displayName": "Version Lens",
   "icon": "images/logo.png",
@@ -20,7 +20,7 @@
     "packages",
     "dependencies",
     "references",
-    "npm, dub, dotnet, nuget, jspm, csharp, fsharp, c#, f#, java, maven, pub, dart"
+    "npm, dub, dotnet, nuget, jspm, csharp, fsharp, c#, f#, java, maven, pub, dart, composer"
   ],
   "categories": [
     "Programming Languages",
@@ -46,14 +46,14 @@
     "test": "node ./node_modules/vscode/bin/test"
   },
   "devDependencies": {
-    "@types/mocha": "^5.2.7",
+    "@types/mocha": "^7.0.2",
     "@types/node": "^10.14.5",
-    "jshint": "2.10.2",
+    "jshint": "2.11.0",
     "mocha-ui-esm": "1.0.0-alpha.4",
     "mock-require": "3.0.3",
-    "rimraf": "2.6.3",
+    "rimraf": "3.0.2",
     "typescript": "3.5.2",
-    "vscode": "1.1.35"
+    "vscode": "1.1.36"
   },
   "dependencies": {
     "systemjs": "~0.21.6",
@@ -314,6 +314,19 @@
             "versions"
           ],
           "description": "Defines which properties in dub.json should be parsed by this extension"
+        },
+        "versionlens.composer.dependencyProperties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true,
+          "minItems": 1,
+          "default": [
+            "require",
+            "require-dev"
+          ],
+          "description": "Defines which properties in composer.json should be parsed by this extension"
         },
         "versionlens.github.taggedCommits": {
           "type": "array",
